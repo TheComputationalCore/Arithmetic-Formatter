@@ -1,0 +1,34 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies if available
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install flake8
+
+      - name: Lint with flake8
+        run: |
+          # Exit with error code on lint fail
+          flake8 . --count --max-line-length=120 --statistics
+
+      - name: Run tests (if tests exist)
+        run: |
+          if [ -d tests ]; then pytest; else echo "No tests found. Skipping."; fi

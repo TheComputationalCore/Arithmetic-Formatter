@@ -1,0 +1,24 @@
+[project]
+name = "arithmetic_formatter"
+version = "1.0.0"
+description = "A modern Python package for arranging arithmetic problems vertically and side-by-side."
+authors = [
+    { name = "TheComputationalCore" }
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/TheComputationalCore/Arithmetic-Formatter"
+Source = "https://github.com/TheComputationalCore/Arithmetic-Formatter"
+Issues = "https://github.com/TheComputationalCore/Arithmetic-Formatter/issues"
+
+[project.scripts]
+arithmetic-formatter = "arithmetic_formatter.cli:main"
+
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"

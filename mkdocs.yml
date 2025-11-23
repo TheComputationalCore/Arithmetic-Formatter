@@ -1,8 +1,5 @@
-
-Paste:
-
-```yaml
 site_name: Arithmetic Formatter Documentation
+
 theme:
   name: material
 

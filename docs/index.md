@@ -17,5 +17,7 @@ Welcome to the official documentation for **Arithmetic Formatter**, a Python pac
 
 ## 📦 Installation
 
+
 ```bash
 pip install .
+```

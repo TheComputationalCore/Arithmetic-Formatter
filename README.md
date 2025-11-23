@@ -17,21 +17,6 @@ Includes a CLI tool, full test suite, modern documentation (MkDocs), and a clean
 
 ---
 
-## 📸 Screenshots
-
-> Make sure that your repository contains these images inside the `screenshots/` directory.
-
-### **Project Structure**
-![Project Structure](screenshots/project_structure.png)
-
-### **Documentation (MkDocs)**
-![Documentation Screenshot](screenshots/docs_screenshot.png)
-
-### **CLI Output Example**
-![CLI Output](screenshots/cli_output.png)
-
----
-
 ## 🚀 Features
 
 - Formats arithmetic problems vertically

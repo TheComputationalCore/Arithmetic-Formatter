@@ -1,86 +1,151 @@
-# Arithmetic Formatter
+# 📐 Arithmetic Formatter
 
-A Python project that arranges arithmetic problems vertically and side-by-side, with optional answer display.
+[![Build Status](https://github.com/TheComputationalCore/Arithmetic-Formatter/actions/workflows/tests.yml/badge.svg)](https://github.com/TheComputationalCore/Arithmetic-Formatter/actions/workflows/tests.yml)
+[![Docs](https://img.shields.io/badge/Documentation-Online-brightgreen)](https://thecomputationalcore.github.io/Arithmetic-Formatter/)
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 
-## Overview
+A clean, modern, and well‑structured Python package that formats arithmetic problems vertically and side‑by‑side.  
+Includes a CLI tool, full test suite, modern documentation (MkDocs), and a clean project layout.
 
-This project implements a function `arithmetic_arranger` that formats addition and subtraction problems for easy reading, following specific formatting rules. It handles up to five problems, validates input, and can display answers when requested.
+---
 
-## Features
+## 🌐 Documentation
 
-- Formats addition and subtraction problems vertically.
-- Supports up to 5 problems at a time.
-- Validates input:
-  - Ensures operators are `+` or `-`.
-  - Checks that numbers contain only digits.
-  - Limits numbers to four digits.
-- Right-aligns numbers with proper spacing (single space between operator and longest operand).
-- Adds dashes under each problem, matching its width.
-- Optionally displays answers when `show_answers=True`.
-- Returns error messages for invalid inputs.
+📖 Full documentation is available here:  
+👉 **https://thecomputationalcore.github.io/Arithmetic-Formatter/**
 
-## Installation
+---
 
-1. Ensure Python 3.x is installed on your system.
-2. Download or clone this repository:
-   ```bash
-   git clone https://github.com/thesoulseizure/arithmetic-formatter.git
-   ```
-3. Navigate to the project directory:
-   ```bash
-   cd arithmetic-formatter
-   ```
+## 📸 Screenshots
 
-## Usage
+> Make sure that your repository contains these images inside the `screenshots/` directory.
 
-1. Save the `arithmetic_formatter.py` file in your project directory.
-2. Import and use the `arithmetic_arranger` function in a Python script or interpreter.
+### **Project Structure**
+![Project Structure](screenshots/project_structure.png)
 
-Example usage:
+### **Documentation (MkDocs)**
+![Documentation Screenshot](screenshots/docs_screenshot.png)
+
+### **CLI Output Example**
+![CLI Output](screenshots/cli_output.png)
+
+---
+
+## 🚀 Features
+
+- Formats arithmetic problems vertically
+- Supports **addition** and **subtraction**
+- Strict validation:
+  - Max 5 problems
+  - Numbers must be digits
+  - Max 4-digit operands
+  - Operators must be `+` or `-`
+- Optional answer output
+- Clean spacing and consistent layout
+- Works as both:
+  - 📦 Library (`arithmetic_arranger`)
+  - 💻 CLI (`arithmetic-formatter`)
+- Fully documented
+- Test‑driven
+- Modern Python packaging
+
+---
+
+## 📦 Installation
+
+Install locally:
+
+```bash
+pip install .
+```
+
+---
+
+## 🧪 Python Usage Example
 
 ```python
-# Basic formatting
-print(arithmetic_arranger(["32 + 698", "3801 - 2", "45 + 43", "123 + 49"]))
+from arithmetic_formatter import arithmetic_arranger
+
+print(
+    arithmetic_arranger(
+        ["32 + 698", "1 - 2", "45 + 43", "123 + 49"],
+        show_answers=True
+    )
+)
 ```
 
 Output:
-```
-   32      3801      45      123
-+ 698    -    2    + 43    +  49
------    ------    ----    -----
-```
 
-With answers:
-```python
-print(arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True))
+```
+   32         1      45      123
++ 698       - 2    + 43    +  49
+-----     -----    ----    -----
+  730        -1      88      172
 ```
 
-Output:
+---
+
+## 💻 CLI Usage
+
+### Basic usage:
+
+```bash
+arithmetic-formatter "32 + 698" "1 - 2"
 ```
-  32         1      9999      523
-+  8    - 3801    + 9999    -  49
-----    ------    ------    -----
-  40     -3800     19998      474
+
+### With answers:
+
+```bash
+arithmetic-formatter "32 + 8" "1 - 3801" --answers
 ```
 
-## Error Handling
+---
 
-The function returns error messages for:
-- Too many problems (> 5): `"Error: Too many problems."`
-- Invalid operators (not `+` or `-`): `"Error: Operator must be '+' or '-'."`
-- Non-digit numbers: `"Error: Numbers must only contain digits."`
-- Numbers exceeding four digits: `"Error: Numbers cannot be more than four digits."`
-- Invalid problem format: `"Error: Invalid problem format."`
+## 🧪 Running Tests
 
-## File Structure
+```bash
+pytest -v
+```
 
-- `arithmetic_formatter.py`: Main Python script containing the `arithmetic_arranger` function.
-- `README.md`: This documentation file.
+---
 
-## Contributing
+## 📁 Project Structure
 
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make changes and commit (`git commit -m "Add feature"`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a pull request.
+```
+arithmetic_formatter/
+    core.py
+    cli.py
+    formats/
+docs/
+tests/
+screenshots/
+.github/workflows/
+mkdocs.yml
+pyproject.toml
+README.md
+LICENSE
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+Please read the **CONTRIBUTING.md** file before submitting pull requests.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+## ⭐ Roadmap
+
+- Add JSON output mode
+- Add LaTeX formatter
+- Add colorized/pretty terminal formatting
+- Add strict vs loose formatting modes
+- Optionally publish to PyPI

@@ -22,3 +22,7 @@ arithmetic-formatter = "arithmetic_formatter.cli:main"
 [build-system]
 requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
+
+# ⭐ Added to fix GitHub Actions packaging error
+[tool.setuptools]
+packages = ["arithmetic_formatter"]

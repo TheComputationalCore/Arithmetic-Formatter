@@ -114,13 +114,6 @@ LICENSE
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome!  
-Please read the **CONTRIBUTING.md** file before submitting pull requests.
-
----
-
 ## 📄 License
 
 This project is licensed under the **MIT License**.
